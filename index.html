@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoGestão Oficina</title>
+    <!-- Carrega o Tailwind CSS para os estilos -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Carrega o React e React-DOM -->
+    <script src="https://unpkg.com" crossorigin></script>
+    <script src="https://unpkg.com" crossorigin></script>
+    <!-- Carrega o Babel para traduzir o JSX em tempo de execução -->
+    <script src="https://unpkg.com"></script>
+    <!-- Carrega os Ícones (Lucide) -->
+    <script src="https://unpkg.com"></script>
+</head>
+<body class="bg-slate-100">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Mapeia os ícones do Lucide para uso global no script
+        const {
+          Receipt, Wrench, LayoutDashboard, SearchCode, Package, Car, FileText,
+          ShoppingCart, History, AlertTriangle, Search, Plus, Edit, Trash2, X,
+          CheckCircle2, Printer, RefreshCw, UserCheck, Settings, Save, Building2,
+          Users, LogOut, Lock, UserPlus
+        } = lucide;
+
+        // URL do Google Apps Script fornecida no seu código
+        const DEFAULT_WEB_APP_URL = 'https://google.com';
+
+        // CONFIGURAÇÕES PADRÃO
+        const DEFAULT_CONFIG = {
+          nome_fantasia: 'AutoGestão Oficina',
+          razao_social: 'Oficina Mecânica & Auto Peças Ltda',
+          cnpj: '00.000.000/0001-00',
+          telefone: '(11) 99999-9999',
+          email: 'contato@oficina.com.br',
+          endereco: 'Rua das Oficinas, 123 - Centro',
+          cidade_uf: 'São Paulo - SP',
+          mensagem_cupom: 'Obrigado pela preferência! Garantia de 90 dias nos serviços.',
+          logo_url: ''
+        };
+
+        const INITIAL_DATA = {
+          config: DEFAULT_CONFIG,
+          cadastro: [], estoque: [], placas: [], funcionarios: [], orcamentos: [], saidas: [],
+          usuarios: [{ id: 'admin-default', username: 'admin', password: '81158617', role: 'admin' }]
+        };
+
+        const formatarMoeda = (valor) => {
+          const num = Number(valor);
+          return isNaN(num) ? '0.00' : num.toFixed(2);
+        };
+
+        const gerarIdUnico = () => String(Date.now()) + Math.random().toString(36).substring(2, 5);
+        const gerarIdCurto = () => String(Date.now()).slice(-5) + Math.floor(Math.random() * 10);
+
+        // [O RESTANTE DO SEU CÓDIGO DO COMPONENTE ENTRA EXATAMENTE AQUI]
+        // (Apenas certifique-se de manter as funções de impressão e o "function App()")
+
+        // No final do arquivo, substitua o "export default function App()" por:
+        function App() {
+            // ... (todo o corpo da sua função App com os estados e retornos)
+        }
+
+        // Renderiza o aplicativo na tela
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
+
